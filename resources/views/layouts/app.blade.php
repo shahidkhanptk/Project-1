@@ -77,7 +77,12 @@
         </nav>
 
         <main class="py-4">
+            <div class="row m-1">
             @yield('content')
+            @yield('branch-content')
+
+            
+        </div>
         </main>
     </div>
     <!-- JavaScript Bundle with Popper -->

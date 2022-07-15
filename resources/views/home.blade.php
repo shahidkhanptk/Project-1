@@ -1,5 +1,5 @@
 @extends('frontend.app')
 
-@section('home-content')
+@section('myhome-content')
 
 @endsection

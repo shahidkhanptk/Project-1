@@ -1,5 +1,5 @@
-@extends('frontend.app')
-@section('branch-content')
+@extends('frontend.staff.app')
+@section('staff-content')
 <div class="row m-1">
 <div class="col-lg-12">
     <div class="card">
@@ -11,18 +11,12 @@
     <table class="table table-responsive-md">
     <thead>
     <tr>
-    {{-- <th style="width:50px;">
-    <div class="custom-control custom-checkbox checkbox-success check-lg mr-3">
-    <input type="checkbox" class="custom-control-input" id="checkAll" required="">
-    <label class="custom-control-label" for="checkAll"></label>
-    </div>
-    </th> --}}
     <th><strong>#id</strong></th>
-    <th><strong>Branch id</strong></th>
+    <th><strong>Branch</strong></th>
     <th><strong>Name</strong></th>
     <th><strong>Email</strong></th>
     <th><strong>CNIC</strong></th>
-    <th><strong>BOB</strong></th>
+    <th><strong>Birth Date</strong></th>
     <th><strong>Picture</strong></th>
     <th><strong>CNIC Picture</strong></th>
     <th><strong>Mobile Number</strong></th>
@@ -33,22 +27,27 @@
     </thead>
     <tbody>
         
-        {{-- @foreach ( as )            
+         @foreach ($staffs as $staff)            
     <tr>
-    <td>#{{ }}</td>
-    <td>{{  }}</td>
-    <td>{{  }}</td>
-    <td>{{  }}</td>
-    <td>{{  }}</td>
-    <td><div class="d-flex align-items-center"><i class="fa fa-circle text-success mr-1"></i> Successful</div></td>
+    <td>#{{$staff->id }}</td>
+    <td>{{ $staff->branch->branch_name }}</td>
+    <td>{{ $staff->name }}</td>
+    <td>{{ $staff->email }}</td>
+    <td>{{ $staff->cnic }}</td>
+    <td>{{ $staff->d_o_b }}</td>
+    <td><img style="width: 40%; height:40%; border-radius:2%; object-fit:fill;" class="img-fluid" alt="Responsive image" src="{{asset('storage/'.$staff->image)}}"></td>
+    <td><img style="width: 40%; height:40%; border-radius:2%; object-fit:fill;" class="img-fluid" alt="Responsive image" src="{{asset('storage/'.$staff->cnic_image)}}"></td>
+    <td>{{ $staff->mobile }}</td>
+    <td>{{ $staff->city }}</td>
+    <td>{{ $staff->address }}</td>
     <td>
     <div class="d-flex">
-    <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-    <a href="" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+    <a href="{{ route('staff.edit', $staff->id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+    <a href="{{ route('staff.delete', $staff->id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
     </div>
     </td>
     </tr>
-    @endforeach --}}
+    @endforeach
 
     </tbody>
     </table>

@@ -17,7 +17,7 @@ class CreateBranchesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('admin_id');
             $table->string('email');
-            $table->string('Password');
+            $table->string('password');
             $table->string('branch_name');
             $table->string('branch_address');
             $table->string('status')->default(0);

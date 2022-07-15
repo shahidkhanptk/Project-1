@@ -1,5 +1,5 @@
 @extends('frontend.branch.app')
 
-@section('home-content')
+@section('staff-content')
 
 @endsection

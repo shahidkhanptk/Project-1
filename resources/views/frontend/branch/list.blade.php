@@ -9,45 +9,34 @@
         <a href="{{ route('branch.create') }}">
         <button type="submit" class="btn btn-primary float-right">Create</button>
         </a>    
-        </div>
+    </div>
+
 </div>
-
-
     <div class="card-body">
     <div class="table-responsive">
-    <table class="table table-responsive-md">
-    <thead>
+        <table class="table table-responsive-md">
+            <thead>
     <tr>
-    {{-- <th style="width:50px;">
-    <div class="custom-control custom-checkbox checkbox-success check-lg mr-3">
-    <input type="checkbox" class="custom-control-input" id="checkAll" required="">
-    <label class="custom-control-label" for="checkAll"></label>
-    </div>
-    </th> --}}
     <th><strong>#id</strong></th>
-    <th><strong>Admin id</strong></th>
+    <th><strong>Admin</strong></th>
     <th><strong>Email</strong></th>
     <th><strong>Branch Name</strong></th>
     <th><strong>Branch Address</strong></th>
+    <th><strong>Dated</strong></th>
     <th><strong>Status</strong></th>
     <th><strong>Action</strong></th>
 </tr>
     </thead>
     <tbody>
         
-        @foreach ($branchs as $branch)            
+        @foreach ($branches as $branch)            
     <tr>
-    {{-- <td>
-    <div class="custom-control custom-checkbox checkbox-success check-lg mr-3">
-    <input type="checkbox" class="custom-control-input" id="customCheckBox2" required="">
-    <label class="custom-control-label" for="customCheckBox2"></label>
-    </div>
-    </td> --}}
     <td>#{{ $branch->id }}</td>
-    <td>{{ $branch->admin_id }}</td>
+    <td>{{ $branch->admin->name }}</td>
     <td>{{ $branch->email }}</td>
     <td>{{ $branch->branch_name }}</td>
     <td>{{ $branch->branch_address }}</td>
+    <td>{{ $branch->updated_at }}</td>
     <td><div class="d-flex align-items-center"><i class="fa fa-circle text-success mr-1"></i> Successful</div></td>
     <td>
     <div class="d-flex">

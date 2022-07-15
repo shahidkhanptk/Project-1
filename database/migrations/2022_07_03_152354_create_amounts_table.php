@@ -15,10 +15,8 @@ class CreateAmountsTable extends Migration
     {
         Schema::create('amounts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('branch_id');
-            $table->bigInteger('expenses')->nullable()->default(0);
-            $table->bigInteger('donation')->nullable()->default(0);
-            $table->bigInteger('amount');
+            $table->unsignedBigInteger('branch_id')->require();
+            $table->bigInteger('amount')->require();
             $table->timestamps();
         });
     }

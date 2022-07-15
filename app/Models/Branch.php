@@ -11,12 +11,17 @@ class Branch extends Model
     
     protected $guarded = [];
 
-    public function user(){
-        return $this->belongsTo(User::class, 'user_id', 'id');
+    public function admin(){
+        return $this->belongsTo(User::class, 'admin_id', 'id');
     }
-    public function amount()
-    {
+    public function amount(){
         return $this->hasMany(Amount::class,'branch_id','id');
+    }
+    public function expense(){
+        return $this->hasMany(Expense::class,'branch_id','id');
+    }
+    public function donation(){
+        return $this->hasMany(Donation::class,'branch_id','id');
     }
     public function staff(){
         return $this->hasMany(Staff::class, 'branch_id', 'id');

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from motaadmin.dexignlab.com/xhtml/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Jul 2022 07:29:57 GMT -->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +8,9 @@
 <meta name="author" content="" />
 <meta name="robots" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="MotaAdmin - Bootstrap Admin Dashboard" />
-<meta property="og:title" content="MotaAdmin - Bootstrap Admin Dashboard" />
-<meta property="og:description" content="MotaAdmin - Bootstrap Admin Dashboard" />
+<meta name="description" content="Admin - Bootstrap Admin Dashboard" />
+<meta property="og:title" content="Admin - Bootstrap Admin Dashboard" />
+<meta property="og:description" content="Admin - Bootstrap Admin Dashboard" />
 <meta property="og:image" content="social-image.png') }}" />
 <meta name="format-detection" content="telephone=no">
 
@@ -708,7 +707,7 @@ KG
 </a>
 <ul aria-expanded="false">
 <li><a href="{{ route('add.expense') }}">Add Expenses</a></li>
-<li><a href="{{ route('add.expense') }}">Add Donation</a></li>
+<li><a href="{{ route('add.donation') }}">Add Donation</a></li>
 </ul>
 </li>
 <li class="nav-label">Account</li>
@@ -717,10 +716,9 @@ KG
 <span class="nav-text">Profile</span>
 </a>
 <ul aria-expanded="false">
-<li><a href="page-register.html">Register</a></li>
-<li><a href="page-login.html">Login</a></li>
-<li><a href="page-login.html">Logout</a></li>
-</ul>
+	<li><a href="{{ route('show.expense') }}">View Expenses</a></li>
+	<li><a href="{{ route('show.donation') }}">View Donation</a></li>
+	</ul>
 </li>
 </ul>
 </div>
@@ -730,7 +728,7 @@ KG
 <div class="content-body mt-2">
 
 	@yield('home-content')
-	@yield('branch-content')
+	@yield('staff-content')
 	
 
 </div>
@@ -825,5 +823,5 @@ KG
 	</script>
 </body>
 
-<!-- Mirrored from motaadmin.dexignlab.com/xhtml/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Jul 2022 07:29:57 GMT -->
+<!-- Mirrored from Admin.dexignlab.com/xhtml/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Jul 2022 07:29:57 GMT -->
 </html>

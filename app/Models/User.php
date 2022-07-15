@@ -45,6 +45,6 @@ class User extends Authenticatable
 
     public function branch()
     {
-        return $this->hasMany(Branch::class,'user_id','id');
+        return $this->hasMany(Branch::class, 'admin_id','id');
     }
 }

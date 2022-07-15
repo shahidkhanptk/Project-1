@@ -10,9 +10,10 @@
     </div>
     <div class="card-body">
     <div class="basic-form">
-    <form class="form-valide-with-icon" action="{{route('branch.update',$branch->id)}}" method="POST">
+    <form action="{{ route('branch.update', $branch->id) }}" method="POST" class="form-valide-with-icon">
      @csrf
         <div class="form-group">
+            {{-- <input type="hidden" name="" value={{ $branch->id }}>  --}}
     <label class="text-label">Email</label>
     <div class="input-group">
     <div class="input-group-prepend">
@@ -31,16 +32,16 @@
         </div>
         </div>
         <div class="form-group">
-            <label class="text-label">Branchaddress</label>
+            <label class="text-label">Branch Address</label>
             <div class="input-group">
             <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-address-book"></i> </span>
             </div>
-            <textarea class="form-control" rows="2" id="comment" value={{!! $branch->branch_address !!}} id="val-username1" name="branch_address" placeholder="Enter a branchaddress.." required></textarea>
+            <textarea class="form-control" rows="2" id="comment" value={{ $branch->branch_address }} id="val-username1" name="branch_address" placeholder="Enter a branchaddress.." required></textarea>
             </div>
             </div>
     <div class="form-group">
-    <label class="text-label">Password *</label>
+    <label class="text-label">Password</label>
     <div class="input-group transparent-append">
     <div class="input-group-prepend">
     <span class="input-group-text"> <i class="fa fa-lock"></i> </span>

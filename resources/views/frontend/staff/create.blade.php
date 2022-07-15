@@ -1,6 +1,6 @@
 @extends('frontend.staff.app')
 
-@section('branch-content')
+@section('staff-content')
 
 <div class="col-xl-12 col-lg-12">
     <div class="card">
@@ -20,7 +20,7 @@
             <div class="input-group-prepend">
             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
-            <input type="text" class="form-control" id="val-username1" name="f_name" placeholder="Enter a firstname..">
+            <input type="text" class="form-control" id="validationCustom01" name="f_name" placeholder="Enter a firstname.." required>
             </div>
             </div>
     </div>
@@ -31,7 +31,7 @@
                 <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                 </div>
-                <input type="text" class="form-control" id="val-username1" name="l_name" placeholder="Enter a lastname..">
+                <input type="text" class="form-control" id="validationCustom02" name="l_name" placeholder="Enter a lastname.." required>
                 </div>
                 </div>
         </div>        
@@ -42,7 +42,7 @@
                 <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                 </div>
-                <input type="text" class="form-control" id="val-username1" name="email" placeholder="Enter an email..">
+                <input type="email" class="form-control" id="validationCustom03" name="email" placeholder="Enter an email.." required>
                 </div>
                 </div>
         </div>        
@@ -53,7 +53,7 @@
                 <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-id-card"></i> </span>
                 </div>
-                <input type="text" class="form-control" id="val-username1" name="cnic" placeholder="Enter a cnic number..">
+                <input type="text" class="form-control" id="validationCustom03" name="cnic" placeholder="Enter a cnic number.." required>
                 </div>
                 </div>
         </div>        
@@ -64,7 +64,7 @@
                 <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                 </div>
-                <input type="text" class="form-control" id="val-username1" name="mobile" placeholder="Enter a mobile number..">
+                <input type="text" name="mobile" data-validation="number" data-validation-allowing="negative,number" input name="color" data-validation="number" datavalidation-ignore="$" required="required" class="form-control" id="phone_no" placeholder="Phone Number">
                 </div>
                 </div>
         </div>        
@@ -73,9 +73,9 @@
                 <label class="text-label">City</label>
                 <div class="input-group">
                 <div class="input-group-prepend">
-                <span class="input-group-text"> <i class="fas fa-city"></i> </span>
+                <span class="input-group-text"> <i class="fas fa-calendar-alt	"></i> </span>
                 </div>
-                <input type="text" class="form-control" id="val-username1" name="city" placeholder="Enter a city..">
+                <input type="text" class="form-control" id="val-username1" name="city" placeholder="Enter a city.." required>
                 </div>
                 </div>
         </div>
@@ -85,7 +85,7 @@
             <div class="form-group">
             <img id="imgpreview" src="{{asset('assets/images/product/2.jpg')}}" style="height: 100px; width: 320px; object-fit: contain;">          
         <div class="input-group mb-3">
-            <input type="file" onchange="document.getElementById('imgpreview').src = window.URL.createObjectURL(this.files[0])" name="image" class="form-control">
+            <input type="file" onchange="document.getElementById('imgpreview').src = window.URL.createObjectURL(this.files[0])" name="image" class="form-control" required>
         </div>
         </div>        
         </div>
@@ -94,14 +94,21 @@
             <div class="form-group">
             <img id="cnicpreview" src="{{asset('assets/images/product/1.jpg')}}" style="height: 100px; width: 320px; object-fit: contain;">          
         <div class="input-group mb-3">
-            <input type="file" onchange="document.getElementById('cnicpreview').src = window.URL.createObjectURL(this.files[0])" name="cnic_image" class="form-control">
+            <input type="file" onchange="document.getElementById('cnicpreview').src = window.URL.createObjectURL(this.files[0])" name="cnic_image" class="form-control" required>
         </div>
         </div>        
         </div>
         <div class="col-md-6 form-material">
-                <label>Default Material Date Picker</label>
-                <input type="text" class="form-control" placeholder="04-07-2022" id="mdate" name="d_o_b">
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="far fa-calendar-check"></i> </span>
+                    </div>
+                    <input type="date" class="form-control" placeholder="04-07-2022" id="mdate" name="d_o_b" required>
                 </div>
+            </div>
+        </div>
         <div class="form-group col-md-6">
             <div class="form-group">
                 <label class="text-label">Address</label>
@@ -109,11 +116,10 @@
                 <div class="input-group-prepend">
                 <span class="input-group-text"> <i class="fa fa-address-book"></i> </span>
                 </div>
-                <textarea row="3" class="form-control" id="val-username1" name="address" placeholder="Enter a address.."></textarea>
+                <textarea row="3" class="form-control" id="val-username1" name="address" placeholder="Enter a address.." required></textarea>
                 </div>
                 </div>
-        </div>        
-            
+        </div>    
     </div>
     <button type="submit" class="btn btn-primary">Add</button>
     </form>
